@@ -3,8 +3,8 @@
 node_modules
 .env
 .env.*
-Dockerfile
 .github
 k8s
 Photos
 README.md
+Dockerfile
