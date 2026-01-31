@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: swiggy-clone
-          image: CDPHERE/swiggy-clone:latest
+          image: cdphere/swiggy-clone:latest
           ports:
             - containerPort: 3000
 ---
