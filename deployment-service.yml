@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swiggy-clone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: swiggy-clone
+  template:
+    metadata:
+      labels:
+        app: swiggy-clone
+    spec:
+      containers:
+        - name: swiggy-clone
+          image: CDPHERE/swiggy-clone:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: swiggy-clone-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: swiggy-clone
+  ports:
+    - port: 80
+      targetPort: 3000
